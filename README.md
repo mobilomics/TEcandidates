@@ -87,7 +87,7 @@ To run TEcandidates, the script must be executed as:
     $ ./TEcandidates.sh -t=Number_of_threads -r=RAM_to_use -g=Genome_Fasta_File -fq=Path_to_FASTQ_files -m=Mode -c=Coverage -te=TE_Annotation
 
     -t Number of threads to use in the softwares executed during the pipeline
-    -r Maximum amount of RAM assigned to Trinity (Trinity's --max\_memory option)
+    -r Maximum amount of RAM assigned to Trinity (Trinity's --max_memory option)
     -g Genome to use (FASTA format, .fasta extension)
     -fq Path to FASTQ files to use (all files must have .fastq extension)
     -m Mode of FASTQ files, SE for Single-end reads and PE for Paired-end reads

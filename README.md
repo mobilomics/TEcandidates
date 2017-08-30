@@ -45,3 +45,11 @@ To run TEcandidates, the script must be executed as:
 
 
 TEcandidates can be used with either single-end reads or paired-end reads. Reads files must have ".fastq" extension.
+
+
+### CITATION
+
+### CONTACT
+
+
+### REFERENCES

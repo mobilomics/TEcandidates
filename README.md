@@ -1,4 +1,4 @@
-![te_candidates_github_logos](https://user-images.githubusercontent.com/31257257/29850478-75918bd4-8d04-11e7-92a0-45a36818d08a.png)
+![tecandidates_logos](https://user-images.githubusercontent.com/31257257/29850516-b42a2540-8d04-11e7-9286-7e8ebefbd455.png)
 
 # TEcandidates
 TEcandidates is a pipeline to include transposable elements in RNA-seq differential expression analysis.

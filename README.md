@@ -5,6 +5,7 @@ TEcandidates is a pipeline to include transposable elements in RNA-seq different
 
 
 ### INSTALLATION INSTRUCTIONS
+_________________________________________________
 
 TEcandidates is implemented in Bash, and requires no installation. However, other softwares that are part of the pipeline are required:
 
@@ -77,6 +78,7 @@ Check correct installation with
     Trinity version: Trinity-v2.4.0
 
 ### SAMPLE USAGE
+_________________________________________________
 
 After installing the required softwares, grant execution permissions to the pipeline script:
 
@@ -99,6 +101,8 @@ TEcandidates can be used with either single-end reads or paired-end reads. Reads
 
 
 ### CONTACT
+_________________________________________________
 
 
 ### REFERENCES
+_________________________________________________

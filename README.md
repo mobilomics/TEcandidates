@@ -98,6 +98,46 @@ To run TEcandidates, the script must be executed as:
 
 TEcandidates can be used with either single-end reads or paired-end reads. Reads files must have ".fastq" extension.
 
+### SAMPLE DATA
+_________________________________________________
+
+In order to check that TEcandidates is working correctly, please test it with a dataset from _Drosophila melanogaster_ (Ohtani et al., 2013). The dataset is available at Gene Expression Omnibus, accession no. GSE47006, and must be downloaded with The _fastq-dump_ tool from the SRA toolkit . To install the SRA toolkit, please copy the link of the appropriate version for your Operating System from https://www.ncbi.nlm.nih.gov/sra/docs/toolkitsoft/, and download it:
+
+    $ wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz
+
+Check if fastq-dump is working:
+
+    $ tar -xvzf sratoolkit.current-ubuntu64.tar.gz
+    $ ./sratoolkit.2.8.2-1-ubuntu64/bin/fastq-dump -V
+
+      ./sratoolkit.2.8.2-1-ubuntu64/bin/fastq-dump : 2.8.2
+
+For ease of use, add the SRA toolkit to your $PATH environment variable. Get the full path to the SRA toolkit binaries with 
+
+    $ readlink -f sratoolkit.2.8.2-1-ubuntu64/bin/
+
+and append it to $PATH like this:
+
+    $ export PATH=$PATH:path_to_SRAtoolkit
+
+
+Create a new work directory
+
+    $ mkdir TEcandidates_test
+    $ cd TEcandidates_test
+
+Download the _Drosophila melanogaster_ control dataset with:
+
+    $ fastq-dump SRR851837 &
+
+Download the _Drosophila melanogaster_ treatment dataset with:
+
+    $ fastq-dump SRR851838 &
+    
+
+
+
+
 
 
 ### CONTACT
@@ -106,3 +146,8 @@ _________________________________________________
 
 ### REFERENCES
 _________________________________________________
+
+Ohtani H, Iwasaki YW, Shibuya A, Siomi H, Siomi MC, Saito K. (2013). DmGTSF1 is necessary for Piwi-piRISC-mediated transcriptional transposon silencing in the Drosophila ovary. Genes Dev. 2013 Aug 1;27(15):1656-61. doi: 10.1101/gad.221515.113.
+
+
+

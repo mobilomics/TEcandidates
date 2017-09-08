@@ -128,12 +128,25 @@ Create a new work directory
 
 Download the _Drosophila melanogaster_ control dataset with:
 
-    $ fastq-dump SRR851837 &
+    $ nohup fastq-dump --defline-seq '@$sn[_$rn]/$ri' --split-files --accession SRR851837 > SRR851837.fastq-dump.log &
 
 Download the _Drosophila melanogaster_ treatment dataset with:
 
-    $ fastq-dump SRR851838 &
+    $ nohup fastq-dump --defline-seq '@$sn[_$rn]/$ri' --split-files --accession SRR851838 > SRR851838.fastq-dump.log &
     
+Once these processes are done, check that they were downloaded correctly with 
+
+    $ tail *log
+    ==> SRR851837.fastq-dump.log <==
+    Read 42134407 spots for SRR851837
+    Written 42134407 spots for SRR851837
+
+    ==> SRR851838.fastq-dump.log <==
+    Read 48277060 spots for SRR851838
+    Written 48277060 spots for SRR851838
+
+
+Execute the pipeline script afterwards:
 
 
 

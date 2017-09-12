@@ -7,6 +7,8 @@ TEcandidates is a pipeline to include transposable elements in RNA-seq different
 ### INSTALLATION INSTRUCTIONS
 _________________________________________________
 
+#### 1. Dependencies
+
 TEcandidates is implemented in Bash, and requires no installation. However, other softwares that are part of the pipeline are required:
 
 **-BEDtools v2.25**
@@ -77,16 +79,30 @@ Check correct installation with
     $ Trinity --version
     Trinity version: Trinity-v2.4.0
 
+#### 2. Installing the TEcandidates pipeline
+
+Download the TEcandidates tarball, and uncompress it:
+
+    $ tar -xvzf TEcandidates_v1.tar.gz
+
+Grant execution permissions to the pipeline script:
+
+    $ chmod u+x TEcandidates_v1/TEcandidates.sh
+
+For simplicity of use, add the TEcandidates full path to your PATH environment variable. First get the full path:
+
+    $ readlink -f TEcandidates_v1
+    
+Then copy the output of the previous command, and add it to the PATH variable:
+
+    $ export PATH=$PATH:/path/to/TEcandidates_v1
+
 ### SAMPLE USAGE
 _________________________________________________
 
-After installing the required softwares, grant execution permissions to the pipeline script:
+Once TEcandidates is in your PATH variable, you can execute it as
 
-    $ chmod u+x TEcandidates.sh
-
-To run TEcandidates, the script must be executed as:
-
-    $ ./TEcandidates.sh -t=Number_of_threads -r=RAM_to_use -g=Genome_Fasta_File -fq=Path_to_FASTQ_files -m=Mode -c=Coverage -te=TE_Annotation
+    $ TEcandidates.sh -t=Number_of_threads -r=RAM_to_use -g=Genome_Fasta_File -fq=Path_to_FASTQ_files -m=Mode -c=Coverage -te=TE_Annotation
 
     -t Number of threads to use in the softwares executed during the pipeline
     -r Maximum amount of RAM assigned to Trinity (Trinity's --max_memory option)
@@ -95,8 +111,10 @@ To run TEcandidates, the script must be executed as:
     -m Mode of FASTQ files, SE for Single-end reads and PE for Paired-end reads
     -c Minimum coverage in which a Transposable element must be covered by a de-novo transcript in order to be selected as candidate
 
-
-TEcandidates can be used with either single-end reads or paired-end reads. Reads files must have ".fastq" extension.
+**Important considerations**
+- Reads files must have ".fastq" extension.
+- TEcandidates can be used with either single-end reads or paired-end reads.  
+Paired-end reads **must have** "\_1.fastq" and "\_2.fastq" extensions.
 
 ### SAMPLE DATA
 _________________________________________________
@@ -145,12 +163,11 @@ Once these processes are done, check that they were downloaded correctly with
     Read 48277060 spots for SRR851838
     Written 48277060 spots for SRR851838
 
-
 Execute the pipeline script afterwards:
 
+    nohup TEcandidates.sh --threads=64 -g=dm3.fasta -fq=. -c=0.5 -te=dm3_rmsk_TE.gff3 -m=SE > TEcandidates.log &
 
-
-
+Once it's done, you should have the following files:
 
 
 ### CONTACT

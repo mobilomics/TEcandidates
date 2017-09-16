@@ -11,7 +11,7 @@ _________________________________________________
 
 TEcandidates is implemented in Bash, and requires no installation. However, other softwares that are part of the pipeline are required. The following are the required softwares, along with some minimum instructions to install them in a computer with Linux. For additional help and/or troubleshooting, the source page of each software is listed for more detailed instructions.
 
-**-BEDtools v2.25**
+- **BEDtools v2.25**
 
 -Source page: https://github.com/arq5x/bedtools2/releases/tag/v2.25.0
 
@@ -26,7 +26,7 @@ Check if installation was correct using
     $ bedtools --version
     bedtools v2.25.0
 
-**-BioPerl**
+- **BioPerl**
 
 -Source page: http://bioperl.org/INSTALL.html
 
@@ -44,7 +44,7 @@ Verify installation with:
 		$ perl -MBio::Root::Version -e 'print $Bio::Root::Version::VERSION,"\n"'
 
         
-**-Bowtie v2.3**
+- **Bowtie v2.3**
 
 -Source page: https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.2
 
@@ -70,7 +70,7 @@ Check correct installation with
     Sizeof {int, long, long long, void*, size_t, off_t}: {4, 8, 8, 8, 8, 8}
 
 
-**-Samtools v1.4.1**
+- **Samtools v1.4.1**
 
 -Source page: https://github.com/samtools/samtools
 
@@ -88,7 +88,7 @@ Check correct installation:
 		Using htslib 1.4.1
 		Copyright (C) 2017 Genome Research Ltd.
 
-**-Trinity v2.4**
+- **Trinity v2.4**
 
 -Source page: https://github.com/trinityrnaseq/trinityrnaseq/
 
@@ -237,7 +237,7 @@ Please send any inquiries about usage and/or bugs to TEcandidates@gmail.com
 ### REFERENCES
 _________________________________________________
 
-		Ohtani H, Iwasaki YW, Shibuya A, Siomi H, Siomi MC, Saito K. (2013). DmGTSF1 is necessary for Piwi-piRISC-mediated transcriptional transposon silencing in the Drosophila ovary. Genes Dev. 2013 Aug 1;27(15):1656-61. doi: 10.1101/gad.221515.113.
+	Ohtani H, Iwasaki YW, Shibuya A, Siomi H, Siomi MC, Saito K. (2013). DmGTSF1 is necessary for Piwi-piRISC-mediated transcriptional transposon silencing in the Drosophila ovary. Genes Dev. 2013 Aug 1;27(15):1656-61. doi: 10.1101/gad.221515.113.
 
 
 

@@ -111,7 +111,7 @@ Check correct installation with
 
 Download the TEcandidates tarball, and uncompress it:
 
-		$ wget https://github.com/TEcandidates/TEcandidates/blob/master/TEcandidates_v1.tar.gz
+	$ wget https://github.com/TEcandidates/TEcandidates/blob/master/TEcandidates_v1.tar.gz
     $ tar -xvzf TEcandidates_v1.tar.gz
 
 Grant execution permissions to the pipeline script:

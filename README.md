@@ -42,7 +42,7 @@ Check if installation was correct using
 Verify installation with:
 
 		$ perl -MBio::Root::Version -e 'print $Bio::Root::Version::VERSION,"\n"'
-
+a
         
 - **Bowtie v2.3**
 

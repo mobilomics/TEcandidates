@@ -30,18 +30,18 @@ Check if installation was correct using
 
 -Source page: http://bioperl.org/INSTALL.html
 
-		$ sudo perl -e shell -MCPAN
-		Password:
-		Terminal does not support AddHistory.
+	$ sudo perl -e shell -MCPAN
+	Password:
+	Terminal does not support AddHistory.
 
-		cpan shell -- CPAN exploration and modules installation (v1.9800)
-		Enter 'h' for help.
+	cpan shell -- CPAN exploration and modules installation (v1.9800)
+	Enter 'h' for help.
 
-		cpan[1]> install C/CJ/CJFIELDS/BioPerl-1.007001.tar.gz
+	cpan[1]> install C/CJ/CJFIELDS/BioPerl-1.007001.tar.gz
 
 Verify installation with:
 
-		$ perl -MBio::Root::Version -e 'print $Bio::Root::Version::VERSION,"\n"'
+	$ perl -MBio::Root::Version -e 'print $Bio::Root::Version::VERSION,"\n"'
 
         
 - **Bowtie v2.3**
@@ -74,19 +74,19 @@ Check correct installation with
 
 -Source page: https://github.com/samtools/samtools
 
-		$ wget https://github.com/samtools/samtools/releases/download/1.4.1/samtools-1.4.1.tar.bz2
-		$ tar -xvjf samtools-1.4.1.tar.bz2
-		$ cd samtools-1.4.1
-		$ ./configure
-		$ make
-		$ sudo make install
+	$ wget https://github.com/samtools/samtools/releases/download/1.4.1/samtools-1.4.1.tar.bz2
+	$ tar -xvjf samtools-1.4.1.tar.bz2
+	$ cd samtools-1.4.1
+	$ ./configure
+	$ make
+	$ sudo make install
 
 Check correct installation:
 	
-		$ samtools --version
-		samtools 1.4.1
-		Using htslib 1.4.1
-		Copyright (C) 2017 Genome Research Ltd.
+	$ samtools --version
+	samtools 1.4.1
+	Using htslib 1.4.1
+	Copyright (C) 2017 Genome Research Ltd.
 
 - **Trinity v2.4**
 

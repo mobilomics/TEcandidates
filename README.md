@@ -9,17 +9,17 @@ _________________________________________________
 
 #### 1. Dependencies
 
-TEcandidates is implemented in Bash, and requires no installation. However, other softwares that are part of the pipeline are required:
+TEcandidates is implemented in Bash, and requires no installation. However, other softwares that are part of the pipeline are required. The following are the required softwares, along with some minimum instructions to install them in a computer with Linux. For additional help and/or troubleshooting, the source page of each software is listed for more detailed instructions.
 
 **-BEDtools v2.25**
 
-Download from https://github.com/arq5x/bedtools2/releases/tag/v2.25.0
+-Source page: https://github.com/arq5x/bedtools2/releases/tag/v2.25.0
 
     $ wget https://github.com/arq5x/bedtools2/releases/download/v2.25.0/bedtools-2.25.0.tar.gz
     $ tar -xvzf bedtools-2.25.0.tar.gz
     $ cd bedtools2/
     $ make
-    $ make install
+    $ sudo make install
 
 Check if installation was correct using        
 
@@ -28,12 +28,27 @@ Check if installation was correct using
 
 **-BioPerl**
 
-Please follow the instructions at http://bioperl.org/INSTALL.html
+-Source page: http://bioperl.org/INSTALL.html
+
+		$ sudo perl -e shell -MCPAN
+		Password:
+		Terminal does not support AddHistory.
+
+		cpan shell -- CPAN exploration and modules installation (v1.9800)
+		Enter 'h' for help.
+
+		cpan[1]> install C/CJ/CJFIELDS/BioPerl-1.007001.tar.gz
+
+Verify installation with:
+
+		$ perl -MBio::Root::Version -e 'print $Bio::Root::Version::VERSION,"\n"'
 
         
 **-Bowtie v2.3**
 
-Download from https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.2
+-Source page: https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.2
+
+Download the appropiate file for your distribution and follow these instructions:
 
     $ unzip bowtie2-2.3.2-linux-x86_64.zip
     $ cd bowtie2-2.3.2/
@@ -57,12 +72,25 @@ Check correct installation with
 
 **-Samtools v1.4.1**
 
-Please follow the instructions at https://github.com/samtools/samtools
+-Source page: https://github.com/samtools/samtools
 
+		$ wget https://github.com/samtools/samtools/releases/download/1.4.1/samtools-1.4.1.tar.bz2
+		$ tar -xvjf samtools-1.4.1.tar.bz2
+		$ cd samtools-1.4.1
+		$ ./configure
+		$ make
+		$ sudo make install
+
+Check correct installation:
+	
+		$ samtools --version
+		samtools 1.4.1
+		Using htslib 1.4.1
+		Copyright (C) 2017 Genome Research Ltd.
 
 **-Trinity v2.4**
 
-Download from https://github.com/trinityrnaseq/trinityrnaseq/
+-Source page: https://github.com/trinityrnaseq/trinityrnaseq/
 
     $ wget https://github.com/trinityrnaseq/trinityrnaseq/archive/master.zip
     $ unzip master.zip
@@ -202,11 +230,14 @@ The candidate Transposable Elements can be found in the **allcandidates_coverage
 ### CONTACT
 _________________________________________________
 
+Please send any inquiries about usage and/or bugs to TEcandidates@gmail.com
+
+
 
 ### REFERENCES
 _________________________________________________
 
-Ohtani H, Iwasaki YW, Shibuya A, Siomi H, Siomi MC, Saito K. (2013). DmGTSF1 is necessary for Piwi-piRISC-mediated transcriptional transposon silencing in the Drosophila ovary. Genes Dev. 2013 Aug 1;27(15):1656-61. doi: 10.1101/gad.221515.113.
+		Ohtani H, Iwasaki YW, Shibuya A, Siomi H, Siomi MC, Saito K. (2013). DmGTSF1 is necessary for Piwi-piRISC-mediated transcriptional transposon silencing in the Drosophila ovary. Genes Dev. 2013 Aug 1;27(15):1656-61. doi: 10.1101/gad.221515.113.
 
 
 

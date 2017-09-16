@@ -194,7 +194,7 @@ Once these processes are done, check that they were downloaded correctly with
 
 Download the genome and the annotation file:
 
-		$ wget XX
+	$ wget XX
 
 Execute the pipeline script afterwards:
 

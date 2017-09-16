@@ -111,6 +111,7 @@ Check correct installation with
 
 Download the TEcandidates tarball, and uncompress it:
 
+		$ wget https://github.com/TEcandidates/TEcandidates/blob/master/TEcandidates_v1.tar.gz
     $ tar -xvzf TEcandidates_v1.tar.gz
 
 Grant execution permissions to the pipeline script:
@@ -190,6 +191,10 @@ Once these processes are done, check that they were downloaded correctly with
     ==> SRR851838.fastq-dump.log <==
     Read 48277060 spots for SRR851838
     Written 48277060 spots for SRR851838
+
+Download the genome and the annotation file:
+
+		$ wget XX
 
 Execute the pipeline script afterwards:
 

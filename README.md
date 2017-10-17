@@ -194,7 +194,8 @@ Once these processes are done, check that they were downloaded correctly with
 
 Download the genome and the annotation file:
 
-	$ wget XX
+	$ wget http://mobilomics.cl/tecandidates/files/dm3.fasta
+	$ wget http://mobilomics.cl/tecandidates/files/dm3_rmsk_TE.gff3
 
 Execute the pipeline script afterwards:
 

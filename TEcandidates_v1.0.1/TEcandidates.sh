@@ -21,11 +21,11 @@ do
 	-te=*|--te-annotation=*)
         TEannotation="${i#*=}"
         ;;
+	-r=*|--RAM=*)
+        RAM="${i#*=}"
+        ;;
 	esac
 done
-
-CPU=4
-RAM="6G"
 
 ####DEPENDENCIES VALIDATION
 
@@ -84,6 +84,12 @@ then
         exit
 fi
 
+if [ -z $RAM ]
+then
+        echo "Please specify the amount of RAM (in GB) to use during the pipeline execution"
+        exit
+fi
+
 if [ -z $mode ]
 then
         echo "Please specify a mode: SE for Single-End Reads or PE for Paired-End Reads"
@@ -125,33 +131,41 @@ readFiles=$(readlink -f $fastqFiles)
 echo "The following read files will be used for the pipeline:"
 echo $readFiles
 
-exit
-
-
-
 Genome=$(readlink -f $Genome)
 TEannotation=$(readlink -f $TEannotation)
+
+echo "Genome file: $Genome"
+echo "Transposable element annotation: $TEannotation"
+echo "Coverage: $minimumCoverage"
+echo "Memory: $RAM""GB"
+echo "Threads: $threads"
+
 
 currentworkingdir=$(pwd)
 
 TEcandidatesDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-#echo $readFiles
-#echo $Genome
-#echo $TEannotation
-#echo $currentworkingdir
-#echo $TEcandidatesDIR
-
 cd $currentworkingdir
 
 outputdir="candidateTE_analysis_coverage-"$minimumCoverage
-mkdir $outputdir
+
+if [ ! -d $outputdir ];
+then
+	echo "Creating $outputdir ..."
+	mkdir $outputdir
+else
+	echo "Output directory already exists"
+fi
+
 cd $outputdir
 
 
 echo "#####GENERATING TRINITY ASSEMBLIES"
 
-mkdir trinity_assemblies
+if [ ! -d trinity_assemblies ];
+then
+	mkdir trinity_assemblies
+fi
 
 for readFile in $readFiles;
 do
@@ -196,7 +210,6 @@ echo "#####MAPPING ASSEMBLIES INTO GENOME"
 BT2_basename=$(basename $Genome)
 BT2_basename=${BT2_basename/.fasta/_BT2}
 
-threads=$CPU
 
 cmd="bowtie2-build --threads $threads $Genome $BT2_basename"
 echo -e "CMD: $cmd"
@@ -261,7 +274,6 @@ done
 
 cd "trinity_assemblies"
 cat *.candidate_TEs > allcandidates.gff3
-#sort -k9,9 -k12,12 -k13,13 allcandidates.gff3 > allcandidates.gff3.sorted
 sort -k9,9d -k12,12n -k13,13n allcandidates.gff3 > allcandidates.gff3.sorted
 finalfile="allcandidates_coverage-"$minimumCoverage".gff3"
 

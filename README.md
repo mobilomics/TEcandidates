@@ -111,20 +111,20 @@ Check correct installation with
 
 Download the TEcandidates tarball, and uncompress it:
 
-	$ wget https://github.com/TEcandidates/TEcandidates/blob/master/TEcandidates_v1.tar.gz
-    $ tar -xvzf TEcandidates_v1.tar.gz
+	$ wget https://github.com/TEcandidates/TEcandidates/blob/master/TEcandidates_LATEST_STABLE.tar.gz
+    $ tar -xvzf TEcandidates_LATEST_STABLE.tar.gz
 
 Grant execution permissions to the pipeline script:
 
-    $ chmod u+x TEcandidates_v1/TEcandidates.sh
+    $ chmod u+x TEcandidates_LATEST_STABLE/TEcandidates.sh
 
 For simplicity of use, add the TEcandidates full path to your PATH environment variable. First get the full path:
 
-    $ readlink -f TEcandidates_v1
+    $ readlink -f TEcandidates_LATEST_STABLE
     
 Then copy the output of the previous command, and add it to the PATH variable:
 
-    $ export PATH=$PATH:/path/to/TEcandidates_v1
+    $ export PATH=$PATH:/path/to/TEcandidates_LATEST_STABLE
 
 ### SAMPLE USAGE
 _________________________________________________

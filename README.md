@@ -199,7 +199,8 @@ Download the genome and the annotation file:
 
 Execute the pipeline script afterwards:
 
-    nohup TEcandidates.sh --threads=64 -g=dm3.fasta -fq=. -c=0.5 -te=dm3_rmsk_TE.gff3 -m=SE > TEcandidates.log &
+    nohup TEcandidates.sh -t=64 -r=128 -g=dm3.fasta -fq=. -c=0.5 -te=dm3_rmsk_TE.gff3 -m=SE > TEcandidates.log &
+
 
 Once it's done, you should have the following files:
 

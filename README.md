@@ -140,8 +140,9 @@ Once TEcandidates is in your PATH variable, you can execute it as
     -m Mode of FASTQ files, SE for Single-end reads and PE for Paired-end reads
     -te Transposable Element annotation file
     -c Minimum coverage in which a Transposable Element must be covered by a de-novo transcript in order to be selected as candidate
-    -l Minimum length of Transposable Element to be considered in the selection step
+    -l Minimum length of Transposable Element to be considered in the selection step
     -N Number of candidate Transposable Elements to output
+
 
 **Important considerations**
 - Reads files must have ".fastq" extension.

@@ -131,14 +131,17 @@ _________________________________________________
 
 Once TEcandidates is in your PATH variable, you can execute it as
 
-    $ TEcandidates.sh -t=Number_of_threads -r=RAM_to_use -g=Genome_Fasta_File -fq=Path_to_FASTQ_files -m=Mode -c=Coverage -te=TE_Annotation
+    $ TEcandidates.sh -t=Number_of_threads -r=RAM_to_use -g=Genome_Fasta_File -fq=Path_to_FASTQ_files -m=Mode -te=TE_Annotation -c=Coverage -l=TE_length -N=Number_of_candidateTEs
 
     -t Number of threads to use in the softwares executed during the pipeline
     -r Maximum amount of RAM assigned to Trinity (Trinity's --max_memory option)
     -g Genome to use (FASTA format, .fasta extension)
     -fq Path to FASTQ files to use (all files must have .fastq extension)
     -m Mode of FASTQ files, SE for Single-end reads and PE for Paired-end reads
-    -c Minimum coverage in which a Transposable element must be covered by a de-novo transcript in order to be selected as candidate
+    -te Transposable Element annotation file
+    -c Minimum coverage in which a Transposable Element must be covered by a de-novo transcript in order to be selected as candidate
+    -l Minimum length of Transposable Element to be considered in the selection step
+    -N Number of candidate Transposable Elements to output
 
 **Important considerations**
 - Reads files must have ".fastq" extension.

@@ -203,40 +203,30 @@ Download the genome and the annotation file:
 
 Execute the pipeline script afterwards:
 
-    nohup TEcandidates.sh -t=64 -r=128 -g=dm3.fasta -fq=. -c=0.5 -te=dm3_rmsk_TE.gff3 -m=SE > TEcandidates.log &
+    nohup TEcandidates.sh -t=10 -r=128 -c=0.3 -l=900 -te=dm3_rmsk_TE.gff3 -g=dm3.fasta -fq=. -m=SE -N=1 > TEcandidates.log &
 
 
-Once it's done, you should have the following files:
+Once it's done, you should have a folder named **candidateTE_analysis_coverage-0.3_length-900_N-1**, that contains the following files:
 
-    $ ls -lht
-    total 28G
-    drwxr-xr-x 3 user user 4.0K Sep 13 10:42 candidateTE_analysis_coverage-0.5
-    -rw-r--r-- 1 user user 3.0M Sep 13 00:04 TEcandidates.log
-    -rw------- 1 user user  328 Sep  6 12:43 nohup.out 
-    -rw-r--r-- 1 user user 5.2M Sep  6 12:40 dm3_rmsk_TE.gff3
-    -rw-r--r-- 1 user user 165M Sep  6 12:39 dm3.fasta 
-    -rw-r--r-- 1 user user  15G Sep  6 07:26 SRR851838_1.fastq
-    -rw-r--r-- 1 user user 3.8K Sep  6 07:26 SRR851838.fastq-dump.log
-    -rw-r--r-- 1 user user  13G Sep  6 07:09 SRR851837_1.fastq
-    -rw-r--r-- 1 user user 3.1K Sep  6 07:09 SRR851837.fastq-dump.log
-
-The **candidateTE_analysis_coverage-0.5** folder contains the following files:
-
-    $ ls -lht candidateTE_analysis_coverage-0.5/
-    total 346M
-    drwxr-xr-x 2 user user 4.0K Sep 13 07:06 trinity_assemblies
-    -rw-r--r-- 1 user user  44M Sep 13 07:08 dm3.fasta.masked_BT2.rev.1.bt2
-    -rw-r--r-- 1 user user  30M Sep 13 07:08 dm3.fasta.masked_BT2.rev.2.bt2
-    -rw-r--r-- 1 user user  44M Sep 13 07:08 dm3.fasta.masked_BT2.1.bt2
-    -rw-r--r-- 1 user user  30M Sep 13 07:08 dm3.fasta.masked_BT2.2.bt2
-    -rw-r--r-- 1 user user 505K Sep 13 07:07 dm3.fasta.masked_BT2.3.bt2
-    -rw-r--r-- 1 user user  30M Sep 13 07:07 dm3.fasta.masked_BT2.4.bt2
-    -rw-r--r-- 1 user user 165M Sep 13 07:07 dm3.fasta.masked
-    -rw-r--r-- 1 user user 5.2M Sep 13 07:06 repeatsToMask_coverage-0.5.gff3
-    -rw-r--r-- 1 user user 4.6K Sep 13 07:06 allcandidates_coverage-0.5.gff3
+    $ ls -lht candidateTE_analysis_coverage-0.3_length-900_N-1
+	total 2.1G
+	drwxr-xr-x 2 bvaldebenito bvaldebenito 4.0K Apr 28 08:22 trinity_assemblies
+	-rw-r--r-- 1 bvaldebenito bvaldebenito  44M Apr 28 08:23 dm3.fasta.masked_BT2.rev.1.bt2
+	-rw-r--r-- 1 bvaldebenito bvaldebenito  30M Apr 28 08:23 dm3.fasta.masked_BT2.rev.2.bt2
+	-rw-r--r-- 1 bvaldebenito bvaldebenito  44M Apr 28 08:22 dm3.fasta.masked_BT2.1.bt2
+	-rw-r--r-- 1 bvaldebenito bvaldebenito  30M Apr 28 08:22 dm3.fasta.masked_BT2.2.bt2
+	-rw-r--r-- 1 bvaldebenito bvaldebenito 505K Apr 28 08:22 dm3.fasta.masked_BT2.3.bt2
+	-rw-r--r-- 1 bvaldebenito bvaldebenito  30M Apr 28 08:22 dm3.fasta.masked_BT2.4.bt2
+	-rw-r--r-- 1 bvaldebenito bvaldebenito 165M Apr 28 08:22 dm3.fasta.masked
+	-rw-r--r-- 1 bvaldebenito bvaldebenito 5.8M Apr 28 08:22 repeatsToMask_coverage-0.3_length-900.gff3
+	-rw-r--r-- 1 bvaldebenito bvaldebenito 7.4K Apr 28 08:22 allcandidates_coverage-0.3_length-900_N-1.gff3
+	-rw-r--r-- 1 bvaldebenito bvaldebenito 1.1G Apr 28 08:01 SRR851838_1_filtered.fastq
+	-rw-r--r-- 1 bvaldebenito bvaldebenito  223 Apr 28 07:57 SRR851838_1.bt2_summary
+	-rw-r--r-- 1 bvaldebenito bvaldebenito 718M Apr 28 07:39 SRR851837_1_filtered.fastq
+	-rw-r--r-- 1 bvaldebenito bvaldebenito  222 Apr 28 07:36 SRR851837_1.bt2_summary
 
 
-The candidate Transposable Elements can be found in the **allcandidates_coverage-0.5.gff3**, those that were removed from the genome in the **repeatsToMask_coverage-0.5.gff3** file. The genome, with the repeats in **repeatsToMask_coverage-0.5.gff3** removed, is in the **dm3.fasta.masked**. Additional files for Bowtie 2 are also generated (**\*\_BT2\*.bt2**).
+The candidate Transposable Elements can be found in the **allcandidates_coverage-0.3_length-900_N-1.gff3**, those that were removed from the genome in the **repeatsToMask_coverage-0.3_length-900.gff3** file. The genome, with the repeats in **repeatsToMask_coverage-0.3_length-900.gff3** removed, is in the **dm3.fasta.masked**. Additional files for Bowtie 2 are also generated (**\*\_BT2\*.bt2**).
 
 ### CONTACT
 _________________________________________________

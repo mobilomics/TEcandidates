@@ -1,0 +1,16 @@
+v2.0.1
+April 17th,2018
+- PLACEHOLDER FOR PE READS 
+
+April 13th, 2018
+- Added pre-mapping step to diminish the number of reads to be used during assembly with Trinity
+- Added option to output any number of candidates (DEFAULT N = 1, this was also the default for all previous versions).
+
+v2.0
+March 13th, 2018
+- Fixed some issues with Trinity Butterfly that caused the pipeline to use up all the memory
+- Added the option to provide a custom length for the candidate selection step
+- Added a util that allows users to use a previous run of the pipeline to generate results with another length and/or coverage
+
+TO-DO
+- Fix issue that after failing Trinity, keeps running the pipeline (should be a validation for Trinity successful assembly)
